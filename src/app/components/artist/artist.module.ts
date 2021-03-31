@@ -6,8 +6,8 @@
  */
 
 import { NgModule } from '@angular/core';
-import { ArtistRoutingModule } from './artist.routing.module';
 import { ComponentsModule } from '../components.module';
+import { ArtistRoutingModule } from './artist.routing.module';
 
 @NgModule({
 

@@ -6,15 +6,14 @@
  */
 
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components.module';
 import { AlbumRoutingModule } from './album.routing.module';
 
 @NgModule({
 
-    imports: [ ComponentsModule, RouterModule ],
+    imports: [ ComponentsModule, AlbumRoutingModule ],
 
-    declarations: [ AlbumRoutingModule ],
+    declarations: [  ],
 
     providers : [  ],
 
