@@ -1,0 +1,40 @@
+<div class="myMargin">
+
+    <div class="container h-100" *ngIf=" isData ">
+        <div class="row h-100 justify-content-center align-items-center">
+            <h3> Loading Data ... &hellip; </h3>
+        </div>
+    </div>
+
+    <div class="container" *ngIf=" !isData ">
+        <div class="mb-5">
+            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h1 class="uk-heading-small">Results : " {{ searchTerm }} "</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4" *ngFor="let results of searchResults; let i = index">
+            <div *ngFor=" let art of results; let z = index " class="col-md-4">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-rounded" [src]=" art.album.cover_medium " uk-img>
+                        </div>
+                    </div>
+
+                    <h3 class="uk-card-title">{{ art.title }}</h3>
+                    <p>Duration  {{ formatTime(art?.duration) }}</p>
+                    <p>From Album <span class="float-right"> {{ art.album.title }} </span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

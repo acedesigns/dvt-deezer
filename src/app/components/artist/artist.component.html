@@ -1,0 +1,49 @@
+
+
+<div class="mt-5 py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+                     data-src="https://cdn.mos.cms.futurecdn.net/dqmkMx9eXDgmnHbFHkL4WN.jpg" uk-img>
+                    <h1>{{artist?.artist.name}}</h1>
+                    <h4> {{ nFormatter(artist?.artist.nb_fan, 3) }} fans </h4>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Top Tracks</h5>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let track of artist?.topTracks; let i = index">
+                        {{ track?.title }}
+
+                        <button (click)="playAdio(track?.preview)" class="btn btn-info btn-sm float-right">
+                            <span>{{ formatTime(track?.duration) }}</span>
+                            <span uk-icon="play"></span>
+                        </button>
+                        <audio id="audio" src="{{ track?.preview }}"></audio>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="uk-divider-icon">
+
+        <div class="row mb-4" *ngFor="let album of albums; let i = index">
+
+            <div class="col-md-4" *ngFor=" let art of album; let z = index ">
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-rounded" [src]=" art.cover_medium " uk-img>
+                        </div>
+                    </div>
+                    <h6 class="uk-card-title">{{ art.title }}</h6>
+                    <p>Release Date <span class="float-right"> {{ art.release_date }} </span> </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

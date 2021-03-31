@@ -1,0 +1,67 @@
+<main role="main" class="mt-5">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>We Love Music</h1>
+            <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa dolor,
+                doloribus hic magni molestiae omnis optio reiciendis sed? Amet aspernatur, dicta dolore ipsam libero nobis
+                optio voluptatum? Aliquam, natus!</p>
+
+        </div>
+    </section>
+</main>
+
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ brunoMars?.picture_medium }}" title="{{ brunoMars?.name }} on DVT Deezer" class="rounded img-fluid" alt="{{ brunoMars?.name }} on DVT Deezer">
+
+                    <div class="card-body">
+                        <h4 class="card-text"> {{ brunoMars?.name }} </h4>
+                        <p class="card-text"> {{ nFormatter(brunoMars?.nb_fan, 3) }} Fans </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button (click)="goToArtist(brunoMars?.id)" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+
+                    <img src="{{ burnnaBoy?.picture_medium }}" title="{{ burnnaBoy?.name }} on DVT Deezer" class="rounded img-fluid" alt="{{ burnnaBoy?.name }} on DVT Deezer">
+
+                    <div class="card-body">
+                        <h4 class="card-text"> {{ burnnaBoy?.name }} </h4>
+                        <p class="card-text"> {{ nFormatter(burnnaBoy?.nb_fan, 3) }} fans </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button (click)="goToArtist(burnnaBoy?.id)" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ billieE?.picture_medium }}" title="{{ billieE?.name }} on DVT Deezer" class="rounded img-fluid" alt="{{ billieE?.name }} on DVT Deezer">
+
+                    <div class="card-body">
+                        <h4 class="card-text"> {{ billieE?.name }} </h4>
+                        <p class="card-text"> {{ nFormatter(billieE?.nb_fan, 3) }} Fans </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button (click)="goToArtist(billieE?.id)" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
